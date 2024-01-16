@@ -1,12 +1,13 @@
 package com.thermondo.ingnite
 
+import android.content.Context
 import com.google.ar.core.Config
 import com.google.ar.core.Session
 
-class ARSession {
-    fun createSession(): Boolean { //TODO Create Session
+class ARSession(private val context: Context) {
+    fun createSession(): Session { //TODO Create Session
         // Create a new ARCore session.
-       /* var session: Session = Session(this)
+        var session: Session = Session(context)
 
         //session = Session(this)
 
@@ -19,7 +20,7 @@ class ARSession {
         // Configure the session.
         session.configure(config)
 
-        return session*/
-        return false
+        return session
+
     }
 }

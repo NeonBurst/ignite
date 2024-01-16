@@ -113,7 +113,7 @@ class MainActivity : ComponentActivity() {
                     .show()
                 return  // mSession remains null, since session creation has failed.
             }
-            val ArSession = ARSession()
+            val ArSession = ARSession(this)
             ArSession.createSession()
         }
     }
