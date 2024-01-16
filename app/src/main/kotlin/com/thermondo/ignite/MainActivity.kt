@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.thermondo.ignite.ui.theme.IgniteTheme
+import com.thermondo.ingnite.Demo
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +24,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
+                    // For demo purposes only
+                    val demo = Demo()
+                    demo.printHelloIgnite()
                     Greeting("Android")
                 }
             }

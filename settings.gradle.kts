@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "ignite"
 include(":app")
+include(":ignite")
