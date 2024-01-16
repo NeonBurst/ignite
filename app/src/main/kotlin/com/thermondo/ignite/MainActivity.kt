@@ -15,7 +15,9 @@ import com.google.ar.core.ArCoreApk
 import com.google.ar.core.Session
 import com.google.ar.core.exceptions.UnavailableUserDeclinedInstallationException
 import com.thermondo.ignite.ui.theme.IgniteTheme
+import com.thermondo.ingnite.ARSession
 import com.thermondo.ingnite.Demo
+import com.thermondo.ingnite.helpers.CameraPermissionHelper
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,6 +46,16 @@ class MainActivity : ComponentActivity() {
         super.onResume()
 
         // Check camera permission.
+
+        // ARCore requires camera permission to operate.
+        val cameraPermissionHelper = CameraPermissionHelper(this)
+
+        if (!cameraPermissionHelper.hasCameraPermission()) {
+            println("No camera")
+            cameraPermissionHelper.requestCameraPermission()
+        }
+
+
 
         var mSession: Session? = null
         // Ensure that Google Play Services for AR and ARCore device profile data are
@@ -78,6 +90,10 @@ class MainActivity : ComponentActivity() {
 
             return  // mSession remains null, since session creation has failed.
         }*/
+        val ArSession = ARSession()
+        ArSession.createSession()
+
+
 
     }
 
